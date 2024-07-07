@@ -55,8 +55,8 @@ void AJPlayer::BeginPlay()
 	StateComp->OnStateTypeChanged.AddDynamic(this, &AJPlayer::OnStateTypeChanged);
 	StateTypeAsUEnum = FindObject<UEnum>(ANY_PACKAGE, TEXT("EStateType"));
 
-
 	// Spawn Waeapon And Attach
+	AttachWeapon();
 }
 
 void AJPlayer::Tick(float DeltaTime)
@@ -111,10 +111,32 @@ void AJPlayer::OnAttack_Implementation()
 	MontagesComp->PlayAttack();
 }
 
+void AJPlayer::BeforeDead_Implementation()
+{
+	// Ragdoll
+	GetMesh()->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+	GetMesh()->SetSimulatePhysics(true);
+	GetMesh()->AddImpulse(FVector(0, 0, 1000.f));
+
+	// Destroy
+	FTimerHandle TimerHandle;
+	GetWorldTimerManager().SetTimer(TimerHandle, this, &AJPlayer::AfterDead, 5.f, false);
+}
+
+void AJPlayer::AfterDead_Implementation()
+{
+	Destroy();
+}
+
 void AJPlayer::OnStateTypeChanged(EStateType InPrevType, EStateType InNewType)
 {
 	FString StateTypeString = StateTypeAsUEnum->GetNameStringByValue((int64)InNewType);
 
 	CLog::Print(StateTypeString, 0, 10.f, FColor::Red);
+
+	if (InNewType == EStateType::Dead)
+	{
+		BeforeDead();
+	}
 }
 

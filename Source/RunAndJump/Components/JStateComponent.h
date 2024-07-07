@@ -33,9 +33,10 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
+	// State Getter
+	UFUNCTION(BlueprintPure, Category = "State")
 	FORCEINLINE EStateType GetType() { return Type; }
 
-	// State Getter
 	UFUNCTION(BlueprintPure, Category = "State")
 	FORCEINLINE bool IsIdle() { return Type == EStateType::Idle; }
 	UFUNCTION(BlueprintPure, Category = "State")
@@ -50,11 +51,17 @@ public:
 	FORCEINLINE bool IsDead() { return Type == EStateType::Dead; }
 		
 	// State Setter
+	UFUNCTION(BlueprintCallable, Category = "State")
 	void SetTypeIdle();
+	UFUNCTION(BlueprintCallable, Category = "State")
 	void SetTypeRoll();
+	UFUNCTION(BlueprintCallable, Category = "State")
 	void SetTypeJump();
+	UFUNCTION(BlueprintCallable, Category = "State")
 	void SetTypeAttack();
+	UFUNCTION(BlueprintCallable, Category = "State")
 	void SetTypeHitted();
+	UFUNCTION(BlueprintCallable, Category = "State")
 	void SetTypeDead();
 
 private:

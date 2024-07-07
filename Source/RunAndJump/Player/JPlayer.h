@@ -38,6 +38,16 @@ protected:
 	UFUNCTION(BlueprintNativeEvent)
 	void OnAttack();
 
+	// Ragdoll
+	UFUNCTION(BlueprintNativeEvent)
+	void BeforeDead();
+	UFUNCTION(BlueprintNativeEvent)
+	void AfterDead();
+
+	// Weapon
+	UFUNCTION(BlueprintImplementableEvent)
+	void AttachWeapon();
+
 public:
 	UFUNCTION()
 	void OnStateTypeChanged(EStateType InPrevType, EStateType InNewType);

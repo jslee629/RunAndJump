@@ -1,5 +1,6 @@
 #include "JAnimInstance.h"
 #include "Global.h"
+#include "JPlayer.h"
 #include "GameFramework/Character.h"
 
 void UJAnimInstance::NativeBeginPlay()
@@ -17,4 +18,9 @@ void UJAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 
 	Speed = Character->GetVelocity().Size2D();
 	Direction = CalculateDirection(Character->GetVelocity(), Character->GetControlRotation());
+
+	AJPlayer* Player = Cast<AJPlayer>(Character);
+	CheckNull(Player);
+
+	StateType = Player->StateComp->GetType();
 }
