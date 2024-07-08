@@ -79,7 +79,7 @@ void AJPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void AJPlayer::OnMoveForward(float AxisValue)
 {
-	FRotator ControlRotation = FRotator(0, GetControlRotation().Yaw, 0);
+	FRotator ControlRotation = FRotator(0, GetControlRotation().Yaw * 100.f, 0);
 	FVector Direction = FQuat(ControlRotation).GetForwardVector();
 
 	AddMovementInput(Direction, AxisValue);
@@ -125,7 +125,7 @@ void AJPlayer::BeforeDead_Implementation()
 
 void AJPlayer::AfterDead_Implementation()
 {
-	Destroy();
+	//Destroy();
 }
 
 void AJPlayer::OnStateTypeChanged(EStateType InPrevType, EStateType InNewType)
