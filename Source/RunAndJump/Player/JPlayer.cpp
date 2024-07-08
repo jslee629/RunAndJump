@@ -130,9 +130,9 @@ void AJPlayer::AfterDead_Implementation()
 
 void AJPlayer::OnStateTypeChanged(EStateType InPrevType, EStateType InNewType)
 {
-	FString StateTypeString = StateTypeAsUEnum->GetNameStringByValue((int64)InNewType);
+	//FString StateTypeString = StateTypeAsUEnum->GetNameStringByValue((int64)InNewType);
 
-	CLog::Print(StateTypeString, 0, 10.f, FColor::Red);
+	//CLog::Print(StateTypeString, 0, 10.f, FColor::Red);
 
 	if (InNewType == EStateType::Dead)
 	{
