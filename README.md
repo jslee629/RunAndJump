@@ -18,3 +18,6 @@ RunAndJump는 사이드 스크롤 러닝 액션 게임입니다.
   - [Trap](About/README_Trap.md)
   - [Moving Platform](About/README_MovingPlatform.md)
   - [Cube](About/README_Cube.md)
+
+## 인게임 영상
+[![인게임 영상 보러가기](http://img.youtube.com/vi/DKu5fM-nq_4/0.jpg)](https://youtu.be/DKu5fM-nq_4)
