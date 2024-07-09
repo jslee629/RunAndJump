@@ -19,5 +19,13 @@ RunAndJump는 사이드 스크롤 러닝 액션 게임입니다.
   - [Moving Platform](About/README_MovingPlatform.md)
   - [Cube](About/README_Cube.md)
 
+## 기술 설명
+- 캐릭터에게 제공되는 InputComponent를 통한 조작 구현
+- 스테이트 머신, 슬롯, 블렌드 스페이스 등을 이용하여 생동감 있는 캐릭터 구현
+- 애님몽타주 제작을 통해 구르기, 공격 이벤트 바인딩 완성
+- 뷰타깃 블랜딩을 통한 자연스러운 시점 변화 구현
+- 파티클을 이용하여 시각적 완성도 증가
+- 위젯을 이용하여 재시작 기능 구현
+
 ## 인게임 영상
 [![인게임 영상 보러가기](http://img.youtube.com/vi/DKu5fM-nq_4/0.jpg)](https://youtu.be/DKu5fM-nq_4)
