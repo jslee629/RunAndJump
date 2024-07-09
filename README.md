@@ -11,11 +11,10 @@ RunAndJump는 사이드 스크롤 러닝 액션 게임입니다.
 
 ## 링크
 - 조작방법
-  - [이동](https://www.naver.com)
-  - [구르기](https://www.naver.com)
-  - [점프](https://www.naver.com)
+  - [이동](About/README_Move.md)
+  - [구르기](About/README_Roll.md)
+  - [점프](About/README_Jump.md)
 - 게임 내 요소
-  - [Trap](https://www.naver.com)
-  - [Moving Platform](https://www.naver.com)
-  - [Cube](https://www.naver.com)
-- 기타
+  - [Trap](About/README_Trap.md)
+  - [Moving Platform](About/README_MovingPlatform.md)
+  - [Cube](About/README_Cube.md)
